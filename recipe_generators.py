@@ -9,7 +9,7 @@ import numpy as np
 
 ### CREATE RANDOM GENERATORS FOR EACH BOOK ###
 
-def Healthy_Vegan_Steet_Food(cuisine=None):
+def Healthy_Vegan_Steet_Food(chapter=None):
     
     Title = 'Healthy Vegan Street Food'
     Author = 'Jackie Kearney'
@@ -20,18 +20,18 @@ def Healthy_Vegan_Steet_Food(cuisine=None):
         'Malaysia & Indonesia': np.linspace(156, 205, 50)
     }
     
-    region, page = r.get_random_recipe(regions, cuisine)
+    region, page = r.get_random_recipe(regions, chapter)
     
     message = f"""
         Your recipe is from the book '{Title}' by {Author}.
-        The cuisine is {region}.
+        The chapter is {region}.
         Go to page {int(page)}.
         Enjoy!
         """
     return message
     
     
-def The_Veg_Box(vegetable=None):
+def The_Veg_Box(chapter=None):
     
     Title = 'The Veg Box'
     Author = 'Stephen & David Flynn (The Happy Pear)'
@@ -49,7 +49,7 @@ def The_Veg_Box(vegetable=None):
         'Potatoes': np.linspace(250, 267, 18)
     }
     
-    veg, page = r.get_random_recipe(veg, vegetable)
+    veg, page = r.get_random_recipe(veg, chapter)
     
     message = f"""
         Your recipe is from the book '{Title}' by {Author}.
@@ -61,7 +61,7 @@ def The_Veg_Box(vegetable=None):
     return message
     
 
-def Bosh_Healthy_Vegan(meal_type=None):
+def Bosh_Healthy_Vegan(chapter=None):
     
     Title = 'Bosh! Healthy Vegan'
     Author = 'Henry Firth & Ian Theasby (Bosh!)'
@@ -75,17 +75,17 @@ def Bosh_Healthy_Vegan(meal_type=None):
             + list(np.linspace(211, 232, 22))
     }
     
-    meal, page = r.get_random_recipe(contents, meal_type)
+    meal, page = r.get_random_recipe(contents, chapter)
         
     message1 = f"""
         Your recipe is from the book '{Title}' by {Author}.
-        The recipe's meal type is "{meal.lower()}".
+        The chapter is '{meal.lower()}'.
         Go to page {int(page)}.
         Enjoy!
         """
     message2 = f"""
         Your recipe is from the book '{Title}' by {Author}.
-        The recipe's meal type is "{meal.lower()}".
+        The recipe's meal type is '{meal.lower()}'.
         Go to page {page}.
         Enjoy!
         """
